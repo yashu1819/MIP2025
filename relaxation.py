@@ -6,7 +6,8 @@ def solve_relaxation_with_time_limit(original_model, time_limit):
     relaxed_model = original_model.relax()
     
     relaxed_model.setParam('TimeLimit', time_limit)
-    
+    relaxed_model.setParam('OutputFlag', 0)
+
     relaxed_model.optimize()
     
     if relaxed_model.SolCount == 0:
